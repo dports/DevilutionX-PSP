@@ -62,4 +62,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: EBOOT.PBP
-        path: EBOOT.PBP
+        path: /home/runner/work/DevilutionX-PSP/DevilutionX-PSP/build
