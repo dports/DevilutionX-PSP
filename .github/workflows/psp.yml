@@ -49,13 +49,12 @@ jobs:
     - name: Configure CMake
       shell: bash
       working-directory: ${{github.workspace}}
-      run: cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTING=OFF -DCPACK=ON -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_TOOLCHAIN_FILE=../CMake/platforms/psp_defs.cmake
+      run: psp-cmake -S. -Bbuild  -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_PRX=1 -DENC_PRX=1
 
     - name: Build
       working-directory: ${{github.workspace}}
       shell: bash
       run: |
-        psp-cmake -S. -Bbuild  -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_PRX=1 -DENC_PRX=1
         cmake --build build -j $(nproc)
   
     - name: Upload-Package
