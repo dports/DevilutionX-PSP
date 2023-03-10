@@ -35,7 +35,7 @@ jobs:
   
     - name: Run BUILD
       run: >
-        psp-cmake -S. -Bbuild  -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_PRX=1 -DENC_PRX=1
+        psp-cmake -S. -Bbuild  -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_PRX=1 -DENC_PRX=1 &&
         cmake --build build -j 2
   
     - name: Upload-Package
